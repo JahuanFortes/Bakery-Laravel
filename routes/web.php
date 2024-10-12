@@ -2,15 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RulesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home');
 
-Route::get('/home', function () {
-    return view('home');
-});
-
+Route::get("/rules", [RulesController::class, 'index'])->name("rules");
+//Route::get("/rules", function () {
+//    return view("rules");
+//});
 Route::get("/contact/{name}", function (string $name) {
     return view("contact", [
         "name" => $name

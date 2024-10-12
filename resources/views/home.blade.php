@@ -10,14 +10,14 @@
     <nav>
         <ul>
             <li>
-                <a href="#">
+                <a href="{{route('rules')}}">
                     rules
                 </a>
             </li>
             <li>
-                <a href="#">
-                    food Dashboard
-                </a>
+                {{--                <a href="{{route('foodDash')}}">--}}
+                {{--                    food Dashboard--}}
+                {{--                </a>--}}
             </li>
         </ul>
         <div>
@@ -53,6 +53,15 @@
 
     </nav>
 </header>
-<h1> hello world</h1>
+
+<main>
+    <h1> Welcome</h1>
+    <section>
+        lorem
+    </section>
+</main>
+<footer>
+
+</footer>
 </body>
 </html>
