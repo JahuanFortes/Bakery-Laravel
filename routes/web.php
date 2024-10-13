@@ -3,18 +3,21 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RulesController;
+use App\Http\Controllers\PostDashboardController;
+
 
 Route::view('/', 'home');
 
 Route::get("/rules", [RulesController::class, 'index'])->name("rules");
-//Route::get("/rules", function () {
-//    return view("rules");
+
+Route::get("/post-dashboard", [PostDashboardController::class, 'index'])->name("post-dashboard");
+
+
+//Route::get("/contact/{name}", function (string $name) {
+//    return view("contact", [
+//        "name" => $name
+//    ]);
 //});
-Route::get("/contact/{name}", function (string $name) {
-    return view("contact", [
-        "name" => $name
-    ]);
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

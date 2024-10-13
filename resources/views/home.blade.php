@@ -11,13 +11,13 @@
         <ul>
             <li>
                 <a href="{{route('rules')}}">
-                    rules
+                    Rules
                 </a>
             </li>
             <li>
-                {{--                <a href="{{route('foodDash')}}">--}}
-                {{--                    food Dashboard--}}
-                {{--                </a>--}}
+                <a href="{{route('post-dashboard')}}">
+                    Posts
+                </a>
             </li>
         </ul>
         <div>
