@@ -66,7 +66,7 @@
 
                         </button>
                     </x-slot>
-
+                    {{----}}
                     <x-slot name="content">
                         @auth
                             <x-dropdown-link :href="route('profile.edit')">
