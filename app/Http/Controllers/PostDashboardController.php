@@ -10,5 +10,10 @@ class PostDashboardController extends Controller
     {
         return view("posts-dashboard");
     }
+
+    public function create()
+    {
+        return view("post-create");
+    }
     //
 }
