@@ -18,4 +18,11 @@
 
 **14/10/24**
 
-- 
+- fixed the layout of the pages and created a way that onl users that are can go to a specific page.
+
+***
+
+**15/10/24**
+
+- Was busy with making the model and migration. the migration part went well, but I don't really understand the model
+  part. I also was busy with figuring out how to make an CRUD and got confused. I'll try finishing the CRUD tomorrow. 

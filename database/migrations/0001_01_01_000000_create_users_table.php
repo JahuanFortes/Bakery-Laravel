@@ -16,8 +16,7 @@ return new class extends Migration {
             $table->string('email', length: 50)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', length: 60);
-            $table->string("phonenumber", length: 15);
-            $table->boolean("admin");
+            $table->boolean("admin")->default("false");
             $table->rememberToken();
             $table->timestamps();
         });
