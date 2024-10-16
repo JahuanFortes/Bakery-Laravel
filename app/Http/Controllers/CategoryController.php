@@ -12,12 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-//        $post = new Post();
-//        $post->title = "haha";
-        return view("posts-dashboard", [
-            "categories" => $category
-        ]);
+        $categories = Category::all();
+        return view("category", compact("categories"));
+//            "categories" => $categories
         //
     }
 
@@ -35,6 +32,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $category = new Category;
+
     }
 
     /**

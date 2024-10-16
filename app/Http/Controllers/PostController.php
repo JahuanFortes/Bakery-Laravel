@@ -15,7 +15,7 @@ class PostController extends Controller
         $posts = Post::all();
 //        $post = new Post();
 //        $post->title = "haha";
-        return view("contact", [
+        return view("posts-dashboard", [
             "posts" => $posts
         ]);
         //
@@ -37,6 +37,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        //$post->user_id= /auth::user()->id
+        //$post->save()
     }
 
     /**

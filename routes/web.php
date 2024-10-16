@@ -13,6 +13,7 @@ Route::view('/', 'dashboard');
 //#region Route::get
 Route::get("/rules", [HomeController::class, 'rules'])->name("rules");
 Route::get("/post-dashboard", [PostController::class, 'index'])->name("post-dashboard");
+Route::get("/category", [CategoryController::class, 'index'])->name("category");
 Route::get("/post-create", [PostController::class, 'create'])->middleware(['auth', 'verified'])->name("post-create");
 
 Route::get("/contact/{name}", function (string $name) {
