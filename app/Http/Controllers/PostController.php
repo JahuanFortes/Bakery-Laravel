@@ -40,6 +40,7 @@ class PostController extends Controller
         //$post->user_id= /auth::user()->id
         //$post->save()
     }
+//
 
     /**
      * Display the specified resource.

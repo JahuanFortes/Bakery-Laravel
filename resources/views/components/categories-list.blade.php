@@ -6,4 +6,5 @@
             <option value="{{$category->title}}">{{$category->title}}</option>
         @endforeach
     </select>
+    {{--    --}}
 </div>

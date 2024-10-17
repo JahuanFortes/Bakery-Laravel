@@ -8,6 +8,7 @@ class RulesController extends Controller
 {
     public function rules()
     {
+//
         return view("rules");
     }
     //
