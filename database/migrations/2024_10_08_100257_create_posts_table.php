@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->string("title", length: 60);
             $table->longText("description");
             $table->boolean("active")->default("false");
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId("category_id")->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId("category_id")->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

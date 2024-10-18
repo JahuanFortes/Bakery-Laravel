@@ -25,4 +25,16 @@
 **15/10/24**
 
 - Was busy with making the model and migration. the migration part went well, but I don't really understand the model
-  part. I also was busy with figuring out how to make an CRUD and got confused. I'll try finishing the CRUD tomorrow. 
+  part. I also was busy with figuring out how to make an CRUD and got confused. I'll try finishing the CRUD tomorrow.
+
+***
+
+**17/10/24**
+
+- Finally fixed the read function for my application. Tomorrow I'll try to fix the rest of the forms
+
+***
+
+**18/10/24**
+
+- tried to fix the Forms, but it didn't work I'll try to get the CRUD working tomorrow

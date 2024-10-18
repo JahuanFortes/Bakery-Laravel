@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
 //
         $categories = Category::all();
-        return view("category", compact("categories"));
+        return view("post-create", compact("categories"));
 //            "categories" => $categories
         //
     }
@@ -33,7 +33,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $category = new Category;
+//        $category = new Category;
 
     }
 

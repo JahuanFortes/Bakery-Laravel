@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\post;
 use Illuminate\Http\Request;
 
@@ -24,10 +25,12 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($catergories)
     {
-        //
-        return view("post-create");
+        $catergories = Category::all();
+        return view("post-create", [
+            'categories' => $catergories
+        ]);
 
     }
 

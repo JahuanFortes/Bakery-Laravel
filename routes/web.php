@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use \App\Http\Controllers\CategoryController;
 
+
 //#region Route::view
 Route::view('/', 'dashboard');
 //#endregion
@@ -13,8 +14,8 @@ Route::view('/', 'dashboard');
 //#region Route::get
 Route::get("/rules", [HomeController::class, 'rules'])->name("rules");
 Route::get("/post-dashboard", [PostController::class, 'index'])->name("post-dashboard");
-Route::get("/category", [CategoryController::class, 'index'])->name("category");
-Route::get("/post-create", [PostController::class, 'create'])->middleware(['auth', 'verified'])->name("post-create");
+//Route::get("/category", [CategoryController::class, 'index'])->name("category");
+Route::get("/post-create/{catergories?}", [PostController::class, 'create'])->middleware(['auth', 'verified'])->name("post-create");
 
 Route::get("/contact/{name}", function (string $name) {
     return view("contact", [
@@ -40,8 +41,12 @@ Route::middleware('auth')->group(function () {
 //#endregion
 
 //#region Route::resource
-Route::resource("post", PostController::class);
-Route::resource("category", CategoryController::class);
+Route::resources([
+    "home" => HomeController::class,
+    "post" => PostController::class,
+    "category" => CategoryController::class,
+]);
+//Route::resource("category", CategoryController::class);
 //#endregion
 
 require __DIR__ . '/auth.php';
