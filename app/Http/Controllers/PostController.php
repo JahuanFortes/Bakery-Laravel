@@ -61,6 +61,7 @@ class PostController extends Controller
      */
     public function edit(post $post)
     {
+
         //
     }
 
