@@ -21,5 +21,5 @@
             </div>
         @endforeach
     @endforeach
-    {{--    --}}
+
 </div>
