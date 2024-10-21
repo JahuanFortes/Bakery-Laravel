@@ -1,8 +1,8 @@
-@props(['categories'])
+@props(['allCategories'])
 <div>
     <label for="#"></label>
-    <select id="#" name="#">
-        @foreach($categories as $category)
+    <select id="#" name="category" class="rounded-md shadow-lg bg-gray-800">
+        @foreach($allCategories as $category)
             <option value="{{$category->title}}">{{$category->title}}</option>
         @endforeach
     </select>

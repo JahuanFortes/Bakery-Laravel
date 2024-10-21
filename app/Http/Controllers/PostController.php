@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+//    public function __construct()
+//    {
+//        $this->middleware('auth')->except([
+//            'create',
+//        ]);
+//    }
+
     /**
      * Display a listing of the resource.
      */
@@ -16,7 +23,7 @@ class PostController extends Controller
         $posts = Post::all();
 //        $post = new Post();
 //        $post->title = "haha";
-        return view("posts-dashboard", [
+        return view("post.index", [
             "posts" => $posts
         ]);
         //
@@ -25,12 +32,11 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($catergories)
+    public function create()
     {
-        $catergories = Category::all();
-        return view("post-create", [
-            'categories' => $catergories
-        ]);
+
+        $categories = Category::all();
+        return view("post.create", compact('categories'));
 
     }
 
@@ -39,9 +45,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$post->user_id= /auth::user()->id
-        //$post->save()
+//        $posts = new Posts();
+//        $categories = new Category();
+//        $request->validate([
+//            'title ' => 'required',
+//            'description ' => 'required',
+//        ], ['name.required' => 'voorbeeld text']);
+//
+//        $posts->title = $request->input("#");
+//        $posts->description = $request->input("#");
+//        $categories-> id =$request->input("");
+//        $posts->save();
+//        //$post->user_id= /auth::user()->id
+//        //$post->save()
+//        return redirect()->route('posts.index');
     }
 //
 
@@ -61,6 +78,8 @@ class PostController extends Controller
      */
     public function edit(post $post)
     {
+//        $post=Post::find();
+//        return view('post.create', compact('post'));
 
         //
     }

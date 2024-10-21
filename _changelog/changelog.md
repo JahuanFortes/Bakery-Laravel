@@ -7,6 +7,7 @@
 
 
 - I finalized the ERD
+  (img here)
 
 ***
 
@@ -19,6 +20,7 @@
 **14/10/24**
 
 - fixed the layout of the pages and created a way that onl users that are can go to a specific page.
+  (img here)
 
 ***
 
@@ -32,9 +34,27 @@
 **17/10/24**
 
 - Finally fixed the read function for my application. Tomorrow I'll try to fix the rest of the forms
+  (img here)
 
 ***
 
 **18/10/24**
 
-- tried to fix the Forms, but it didn't work I'll try to get the CRUD working tomorrow
+- Tried to fix the Forms, but it didn't work I'll try to get the CRUD working tomorrow
+
+***
+
+**19/tm/20/10/24**
+
+- Forgot to change the change log
+
+***
+
+**21/10/24**
+
+- Today I had a lesson about Security (episode 16 and 23 in Laracast)
+- //@CSRF-Token
+- //Middleware / @auth
+- //crtl + shift + F (Var zoek optie)
+- //JSON web tokens (JWT)
+- //value={{old('name')}} update with same data 
