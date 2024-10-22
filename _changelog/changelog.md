@@ -57,4 +57,11 @@
 - //Middleware / @auth
 - //crtl + shift + F (Var zoek optie)
 - //JSON web tokens (JWT)
-- //value={{old('name')}} update with same data 
+- //value={{old('name')}} update with same data
+
+***
+**22/10/24**
+
+- Finally fixed the Create function for my application. The Read should and delete should be easy to fix, so I'll do
+  that tomorrow.
+  (image here)

@@ -34,10 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {
-
         $categories = Category::all();
         return view("post.create", compact('categories'));
-
     }
 
     /**
@@ -45,20 +43,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-//        $posts = new Posts();
-//        $categories = new Category();
-//        $request->validate([
-//            'title ' => 'required',
-//            'description ' => 'required',
-//        ], ['name.required' => 'voorbeeld text']);
+        $posts = new Post();
+        $categories = new Category();
+        $request->validate([
+            'title' => ['required', 'string', 'max:50'],
+            'description' => ['required', 'string', 'max:50']
+        ], ['title.required' => 'voorbeeld text'],
+            ['description.required' => 'voorbeeld text']);
 //
-//        $posts->title = $request->input("#");
-//        $posts->description = $request->input("#");
-//        $categories-> id =$request->input("");
-//        $posts->save();
-//        //$post->user_id= /auth::user()->id
-//        //$post->save()
-//        return redirect()->route('posts.index');
+        $posts->title = $request->input("title");
+        $posts->description = $request->input("description");
+        $posts->user_id = \Auth::user()->id;
+        $posts->category_id = $request->input('category');
+        $posts->save();
+        return redirect()->route('posts.index');
+
     }
 //
 
