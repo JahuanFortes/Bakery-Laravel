@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\post;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -20,12 +20,15 @@ class PostController extends Controller
      */
     public function index()
     {
+
         $posts = Post::all();
-//        $post = new Post();
-//        $post->title = "haha";
-        return view("post.index", [
-            "posts" => $posts
-        ]);
+        $categories = Category::all();
+
+        return view("post.index", compact(["posts", "categories"]));
+//        [
+//             => $posts,
+//
+//        ]);
         //
     }
 
@@ -64,12 +67,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
+    //display a single post
     public function show(post $post)
     {
-//        return view("post.details",[
-//            'post'=>$post
-//        ]);
-        //
+
+
     }
 
     /**

@@ -5,10 +5,13 @@
         </h2>
     </x-slot>
 
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <x-categories-list :allCategories="$categories" name="category"/>
 
                     {{--                    @foreach($posts as $post)--}}
                     {{--                        <x-post-item :post="$post">--}}
@@ -18,9 +21,11 @@
                     <button>
                         <a href="{{route("posts.create")}}">click me</a>
                     </button>
+                    <x-post-item :allPosts="$posts"/>
+
+
                 </div>
             </div>
         </div>
     </div>
-    {{----}}
 </x-app-layout>
