@@ -65,3 +65,9 @@
 - Finally fixed the Create function for my application. The Read should and delete should be easy to fix, so I'll do
   that tomorrow.
   (image here)
+
+***
+**23/10/24**
+
+- Fixed the read today
+- I FORGOT TO COMMIT!!!! I WAS STILL BUSY CODING DAMNIT!!!! GOD I HATE MYSELF!!!! 2 POINTS DOWN THE DRAIN!!!!! 

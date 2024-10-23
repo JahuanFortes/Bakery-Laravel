@@ -22,7 +22,7 @@
                         <a href="{{route("posts.create")}}">click me</a>
                     </button>
                     <x-post-item :allPosts="$posts"/>
-
+                    {{----}}
 
                 </div>
             </div>
