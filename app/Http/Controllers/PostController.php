@@ -53,6 +53,7 @@ class PostController extends Controller
             'description' => ['required', 'string', 'max:50']
         ], ['title.required' => 'voorbeeld text'],
             ['description.required' => 'voorbeeld text']);
+        
 //
         $posts->title = $request->input("title");
         $posts->description = $request->input("description");
