@@ -20,7 +20,11 @@ class PostController extends Controller
      */
     public function index()
     {
-
+//        if (request('search')) {
+//            $posts = Post::where('title', 'like', '%' . request('search') . '%')->get();
+//        } else {
+//
+//        }
         $posts = Post::all();
         $categories = Category::all();
 
@@ -38,7 +42,12 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("post.create", compact('categories'));
+        $user = \Auth::user();
+        if (\Auth::check()) {
+            return view("post.create", compact('categories'));
+        } else {
+            return redirect("login");
+        }
     }
 
     /**
@@ -53,7 +62,7 @@ class PostController extends Controller
             'description' => ['required', 'string', 'max:50']
         ], ['title.required' => 'voorbeeld text'],
             ['description.required' => 'voorbeeld text']);
-        
+
 //
         $posts->title = $request->input("title");
         $posts->description = $request->input("description");

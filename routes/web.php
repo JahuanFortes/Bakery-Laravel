@@ -9,6 +9,7 @@ use \App\Http\Controllers\CategoryController;
 
 //#region Route::view
 Route::view('/', 'dashboard');
+Route::view('/admin', 'admin.index');
 
 //#endregion
 
