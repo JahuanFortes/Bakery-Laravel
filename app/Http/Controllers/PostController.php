@@ -18,22 +18,31 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+//#region Filter
+//        $filter = $request->query('filter'); // Capture the filter value
+//        // Apply your filter logic based on the selected option
+//        $items = Post::query();
+//
+//        if ($filter) {
+//            $items->where('category', $filter); // Adjust this to fit your actual filter logic
+//        }
+//
+//        $items = $items->get();
+//#endregion
+
+//#region search
 //        if (request('search')) {
 //            $posts = Post::where('title', 'like', '%' . request('search') . '%')->get();
 //        } else {
 //
 //        }
+//#endregion search
         $posts = Post::all();
         $categories = Category::all();
 
         return view("post.index", compact(["posts", "categories"]));
-//        [
-//             => $posts,
-
-//        ]);
-        //
     }
 
     /**
@@ -81,7 +90,7 @@ class PostController extends Controller
     public function show(post $post)
     {
 
-
+        return view('post.show', compact("postShow"));
     }
 
     /**

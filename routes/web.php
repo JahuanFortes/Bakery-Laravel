@@ -5,11 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use \App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\AdminController;
 
 
 //#region Route::view
 Route::view('/', 'dashboard');
-Route::view('/admin', 'admin.index');
+Route::view('/test', 'test');
 
 //#endregion
 
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
 //#endregion
 
 //#region Route::resource
+Route::resource("admin", AdminController::class);
 Route::resource("posts", PostController::class);
 Route::resource("category", CategoryController::class);
 //Route::resource("category", CategoryController::class);

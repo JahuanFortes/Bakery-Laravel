@@ -70,4 +70,20 @@
 **23/10/24**
 
 - Fixed the read today
-- I FORGOT TO COMMIT!!!! I WAS STILL BUSY CODING DAMNIT!!!! GOD I HATE MYSELF!!!! 2 POINTS DOWN THE DRAIN!!!!! 
+- I FORGOT TO COMMIT!!!! I WAS STILL BUSY CODING DAMNIT!!!! GOD I HATE MYSELF!!!! 2 POINTS DOWN THE DRAIN!!!!!
+
+*** 
+**20/tm/26/10/24**
+
+- Forgot to change the change log
+
+***
+**27/10/24**
+
+- Right now I'm busy with fixing the filter and the search function (img here)
+- I made the admin page where you as admin could see all the data of the users post. I'm planing to add there the edit
+  and delete page
+  (img here)
+- Looked for a tutorial of the filter and the search function and also used a bit of chat-gpt(that didn't work btw)
+
+***
