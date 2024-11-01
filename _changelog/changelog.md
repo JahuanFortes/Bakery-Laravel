@@ -87,3 +87,8 @@
 - Looked for a tutorial of the filter and the search function and also used a bit of chat-gpt(that didn't work btw)
 
 ***
+**31/10/24**
+
+- I added a search function. I also started with the admin page, like and filter function. (img here)
+
+***
