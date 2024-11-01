@@ -32,17 +32,35 @@ class PostController extends Controller
 //        $items = $items->get();
 //#endregion
 
-//#region search
-//        if (request('search')) {
-//            $posts = Post::where('title', 'like', '%' . request('search') . '%')->get();
-//        } else {
-//
-//        }
-//#endregion search
         $posts = Post::all();
         $categories = Category::all();
 
         return view("post.index", compact(["posts", "categories"]));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $query = Post::query();
+        $query->whereAny(['title', 'description'], 'LIKE', "%$search%");
+
+        $query->orWhereHas('category', function ($query) use ($search) {
+            $query->whereAny(["title"], 'LIKE', "%$search%");
+        })
+            ->orWhereHas('user', function ($query) use ($search) {
+                $query->whereAny(["name"], 'LIKE', "%$search%");
+            });
+        $posts = $query->get();
+        return view('post.index', compact("posts"));
+    }
+
+    public function filter(Request $request)
+    {
+        $filter = $request->filter;
+        $query = Post::query();
+        $query->whereHas('category', function ($query) use ($filter) {
+            $query->whereAny(["title"], 'LIKE', "%$filter%");
+        });
     }
 
     /**
@@ -69,8 +87,8 @@ class PostController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:50'],
             'description' => ['required', 'string', 'max:50']
-        ], ['title.required' => 'voorbeeld text'],
-            ['description.required' => 'voorbeeld text']);
+        ], ['title.required' => 'Title is required'],
+            ['description.required' => 'Description is required']);
 
 //
         $posts->title = $request->input("title");
@@ -89,6 +107,7 @@ class PostController extends Controller
     //display a single post
     public function show(post $post)
     {
+
 
         return view('post.show', compact("postShow"));
     }

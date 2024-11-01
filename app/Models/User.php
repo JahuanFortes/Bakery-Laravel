@@ -16,6 +16,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+//    public function posts()
+//    {
+//        return $this->hasMany(Post::class);
+//    }
+//
+//    public function likes()
+//    {
+//        return $this->hasMany(Like::class);
+//    }
+//
+//    public function likedPosts()
+//    {
+//        return $this->belongsToMany(Post::class, 'post_user');
+//    }
     protected $fillable = [
         'name',
         'email',
@@ -42,6 +57,7 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+
     protected function casts(): array
     {
         return [

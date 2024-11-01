@@ -16,6 +16,9 @@ Route::view('/test', 'test');
 
 //#region Route::get
 Route::get("/rules", [HomeController::class, 'rules'])->name("rules");
+Route::get('/search', [PostController::class, 'search']);
+Route::get('/filter', [PostController::class, 'filter']);
+
 //->middleware(['auth', 'verified'])
 
 //Route::get("/contact/{name}", function (string $name) {
