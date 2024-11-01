@@ -92,3 +92,9 @@
 - I added a search function. I also started with the admin page, like and filter function. (img here)
 
 ***
+
+**1/11/24**
+
+- Today I added the Update and the Read function for my application.I also fixed a few bugs next to that. (img here)
+
+***

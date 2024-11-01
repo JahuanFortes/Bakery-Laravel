@@ -33,7 +33,11 @@
                 <td class="px-6 py-4 border-b border-gray-200">{{$post->user->name}}</td>
                 <td class="px-6 py-4 border-b border-gray-200">{{$post->category->title}}</td>
                 <td class="px-6 py-4 border-b border-gray-200">{{$post->created_at}}</td>
-                <td class="px-6 py-4 border-b border-gray-200">edit</td>
+                {{--                <a href="{{route('posts.edit')}}">--}}
+                <td class="px-6 py-4 border-b border-gray-200"><a href="{{route("posts.edit",$post->id)}}"> edit</a>
+                </td>
+
+                {{--                </a>--}}
                 <td class="px-6 py-4 border-b border-gray-200">delete</td>
                 @endforeach
             </tr>

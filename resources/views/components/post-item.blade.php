@@ -13,7 +13,8 @@
                         <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                             {{$post->category->title}}
                         </div>
-                        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                        <a href="{{route("posts.show",$post->id)}}"
+                           class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
                             {{$post->title}}
                         </a>
                         <p class="mt-2 text-slate-500">{{$post->description}}</p>

@@ -38,18 +38,24 @@ class PostController extends Controller
         return view("post.index", compact(["posts", "categories"]));
     }
 
+
+//use categoryFilter =$request->input->filter;
     public function search(Request $request)
     {
         $search = $request->search;
         $query = Post::query();
-        $query->whereAny(['title', 'description'], 'LIKE', "%$search%");
+        if ($request->filled(['title', 'description'])) {
+            $query->whereAll(['title', 'description'], 'LIKE', "%$search%");
+        } else {
+            $query->whereAny(['title', 'description'], 'LIKE', "%$search%");
+        }
 
-        $query->orWhereHas('category', function ($query) use ($search) {
-            $query->whereAny(["title"], 'LIKE', "%$search%");
-        })
-            ->orWhereHas('user', function ($query) use ($search) {
-                $query->whereAny(["name"], 'LIKE', "%$search%");
-            });
+//        $query->orWhereHas('category', function ($query) use ($search) {
+//            $query->whereAny(["title"], 'LIKE', "%$search%");
+//        })
+        $query->orWhereHas('user', function ($query) use ($search) {
+            $query->whereAny(["name"], 'LIKE', "%$search%");
+        });
         $posts = $query->get();
         return view('post.index', compact("posts"));
     }
@@ -85,12 +91,18 @@ class PostController extends Controller
         $posts = new Post();
         $categories = new Category();
         $request->validate([
-            'title' => ['required', 'string', 'max:50'],
-            'description' => ['required', 'string', 'max:50']
-        ], ['title.required' => 'Title is required'],
-            ['description.required' => 'Description is required']);
+            'title' => [
+                'required', 'string', 'max:50'
+            ],
+            'description' => [
+                'required', 'string', 'max:50'
+            ]
+        ], [
+            'title.required' => 'Title is required'
+        ], [
+            'description.required' => 'Description is required'
+        ]);
 
-//
         $posts->title = $request->input("title");
         $posts->description = $request->input("description");
         $posts->user_id = \Auth::user()->id;
@@ -105,11 +117,11 @@ class PostController extends Controller
      * Display the specified resource.
      */
     //display a single post
-    public function show(post $post)
+    public function show($id)
     {
+        $post = Post::findOrFail($id); // Retrieves the post or returns 404 if not found
 
-
-        return view('post.show', compact("postShow"));
+        return view('post.show', compact("post"));
     }
 
     /**
@@ -117,6 +129,11 @@ class PostController extends Controller
      */
     public function edit(post $post)
     {
+
+        $categories = Category::all();
+
+//        $post = Auth::user()->admin;
+        return view('admin.edit', compact("post", "categories"));
 //        $post=Post::find();
 //        return view('post.create', compact('post'));
 
@@ -126,9 +143,37 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, post $post)
+    public function update(Request $request, post $post,)
     {
-        //
+
+        $categories = Category::all();
+
+        $request->validate([
+            'title' => [
+                'required', 'string', 'max:50'
+            ],
+            'description' => [
+                'required', 'string', 'max:50'
+            ], 'category' => [
+                'required'
+            ]
+        ], [
+            'title.required' => 'Title is required'
+        ], [
+            'description.required' => 'Description is required'
+        ]);
+
+//        if (Auth::user()->admin) {
+//        $posts->title = $request->input("title");
+//        $posts->description = $request->input("description");
+//        $posts->category_id = $request->input('category');
+//        $post = Post::findOrFail($id);
+
+        $post->update($request->all());
+//        } else {
+//            return ("You don't have permission to edit this post");
+//        }
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -136,6 +181,7 @@ class PostController extends Controller
      */
     public function destroy(post $post)
     {
-        //
+//        $post = \Auth::user()->id;
+
     }
 }

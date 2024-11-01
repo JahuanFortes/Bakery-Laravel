@@ -15,6 +15,8 @@ class UserCanCreatePost
      */
     public function handle(Request $request, Closure $next): Response
     {
+//        look up increments for the deep validation.
+        
 //        $user = $request->user();
 //
 //        $likedPostsCount = $user->likedPosts()->where('user_id', '!=', $user->id)->count();
