@@ -95,6 +95,7 @@
 
 **1/11/24**
 
-- Today I added the Update and the Read function for my application.I also fixed a few bugs next to that. (img here)
+- Today I added the Update and the Read function for my application.I also fixed a few bugs next to that. Tomorrow ill
+  finish the admin only page and the delete function. (img here)
 
 ***
