@@ -11,6 +11,7 @@ class AdminController extends Controller
 {
     public function index()
     {
+        
         $users = User::all();
         $posts = Post::all();
         $categories = Category::all();

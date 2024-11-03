@@ -17,20 +17,26 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
-//    public function posts()
-//    {
-//        return $this->hasMany(Post::class);
-//    }
-//
-//    public function likes()
-//    {
-//        return $this->hasMany(Like::class);
-//    }
-//
-//    public function likedPosts()
-//    {
-//        return $this->belongsToMany(Post::class, 'post_user');
-//    }
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'post_user')->withPivot('likecount');
+    }
+
+    public function post()
+    {
+        return $this->belongsToMany(Post::class, 'post_user')->withPivot('likecount');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function likedPosts()
+    {
+        return $this->belongsToMany(Post::class, 'post_user');
+    }
+
     protected $fillable = [
         'name',
         'email',
@@ -45,6 +51,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'admin' => 'boolean',
+
     ];
 
 //    public function userPosts()
@@ -63,6 +71,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'admin' => 'boolean',
         ];
     }
 }

@@ -19,10 +19,15 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-//    public function likes()
-//    {
-//        return $this->hasMany(User::class, 'post_user');
-//    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'post_user')->withPivot('likecount');
+    }
+
+    public function likedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'post_user')->withPivot('liked');
+    }
 
 //
     protected $fillable = [

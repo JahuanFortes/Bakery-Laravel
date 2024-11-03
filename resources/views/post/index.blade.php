@@ -17,19 +17,14 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{--                    <x-categories-list :allCategories="$categories" name="category"/>--}}
-                    {{--                    <x-filter-btn :allCategories="$categories" name="category"/>--}}
+                    {{-- <x-categories-list :allCategories="$categories" name="category"/>--}}
+                    {{-- @foreach($posts as $post)--}}
+                    {{--<x-post-item :post="$post">--}}
 
-                    {{--                    @foreach($posts as $post)--}}
-                    {{--                        <x-post-item :post="$post">--}}
-
-                    {{--                        </x-post-item>--}}
-                    {{--                    @endforeach--}}
+                    {{--</x-post-item>--}}
+                    {{--@endforeach--}}
 
                     <x-post-item :allPosts="$posts"/>
-                    {{----}}
-
-
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@
 **14/10/24**
 
 - fixed the layout of the pages and created a way that onl users that are can go to a specific page.
-  (img here)
+  (img here)![Screenshot_7.png](img%2FScreenshot_7.png)
 
 ***
 
@@ -34,7 +34,7 @@
 **17/10/24**
 
 - Finally fixed the read function for my application. Tomorrow I'll try to fix the rest of the forms
-  (img here)
+  (img here)![Screenshot_8.png](img%2FScreenshot_8.png)![Screenshot_10.png](img%2FScreenshot_10.png)
 
 ***
 
@@ -64,12 +64,13 @@
 
 - Finally fixed the Create function for my application. The Read should and delete should be easy to fix, so I'll do
   that tomorrow.
-  (image here)
+  (image here)![Screenshot_1.png](img%2FScreenshot_1.png)![Screenshot_2.png](img%2FScreenshot_2.png)
+  ![Screenshot_3.png](img%2FScreenshot_3.png)
 
 ***
 **23/10/24**
 
-- Fixed the read today
+- Fixed the read today![Screenshot_14.png](img%2FScreenshot_14.png)
 - I FORGOT TO COMMIT!!!! I WAS STILL BUSY CODING DAMNIT!!!! GOD I HATE MYSELF!!!! 2 POINTS DOWN THE DRAIN!!!!!
 
 *** 
@@ -80,7 +81,8 @@
 ***
 **27/10/24**
 
-- Right now I'm busy with fixing the filter and the search function (img here)
+- Right now I'm busy with fixing the filter and the search
+  function ![Screenshot_10.png](img%2FScreenshot_10.png)![Screenshot_11.png](img%2FScreenshot_11.png)
 - I made the admin page where you as admin could see all the data of the users post. I'm planing to add there the edit
   and delete page
   (img here)
@@ -96,6 +98,22 @@
 **1/11/24**
 
 - Today I added the Update and the Read function for my application.I also fixed a few bugs next to that. Tomorrow ill
-  finish the admin only page and the delete function. (img here)
+  finish the admin only page and the delete function.![Screenshot_12.png](img%2FScreenshot_12.png)
+  ![Screenshot_13.png](img%2FScreenshot_13.png)
+
+***
+
+**3/11/24**
+
+- Been a while, but I can finally say that I'm done with this project. I was very busy last, so I forgot to commit for a
+  few days,but that doesn't mean that I've done nothing.
+- The last few days I was finishing this project by adding a filter,search,like function, an admin only page, deep
+  validation and more.
+- I had a lot of trouble with making an admin only page. I made a mistake of putting "false" in a boolean table :(.
+- I also had a lot of trouble with the deep validation for the like function. I had to use "pivot". pivot helps with
+  making many-many tables.(if I understand it correctly)
+- (img
+  here)![Screenshot_17.png](img%2FScreenshot_17.png)![Screenshot_18.png](img%2FScreenshot_18.png)![Screenshot_19.png](img%2FScreenshot_19.png)
+  ![Screenshot_20.png](img%2FScreenshot_20.png)![Screenshot_21.png](img%2FScreenshot_21.png)
 
 ***

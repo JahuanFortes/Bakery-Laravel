@@ -10,4 +10,14 @@
             type="submit">Search
         </button>
     </form>
+    {{--filter Doesn't work--}}
+    {{--    <form action="{{ route('post.filter') }}" method="GET">--}}
+    {{--        <label for="category_id">Filter:</label>--}}
+    {{--        <select name="category_id" id="category_id">--}}
+    {{--            @foreach($categories as $category)--}}
+    {{--                <option value="{{ $category->id }}">{{ $category->name }}</option>--}}
+    {{--            @endforeach--}}
+    {{--        </select>--}}
+    {{--        <button type="submit">Submit</button>--}}
+    {{--    </form>--}}
 </div>
