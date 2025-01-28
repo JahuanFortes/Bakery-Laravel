@@ -127,6 +127,11 @@ class PostController extends Controller
         // Fetches all categories to display as options in the edit form
         $categories = Category::all();
 
+        // Check if the authenticated user is the owner of the post
+        if (!auth()->check() || auth()->id() !== $post->user_id) {
+            abort(403, 'Unauthorized action.');
+        }
+
         // Returns 'admin.edit' view with the post and categories data
         return view('admin.edit', compact("post", "categories"));
     }
@@ -136,6 +141,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        // Check if the authenticated user is the owner of the post
+        if (!auth()->check() || auth()->id() !== $post->user_id) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $request->validate([
             'title' => 'required|string|max:50',
             'description' => 'required|string|max:50',
@@ -149,7 +159,7 @@ class PostController extends Controller
         $post->update($request->all());
 
         // Redirects to the admin index page after updating
-        return redirect()->route('admin.index');
+        return redirect()->route('profile.edit');
     }
 
     /**
@@ -218,4 +228,10 @@ class PostController extends Controller
         // Redirect back to admin index
         return redirect()->route('admin.index');
     }
+
+    public function getPostsByUser($userId)
+    {
+        return Post::where('user_id', $userId)->get();
+    }
+
 }

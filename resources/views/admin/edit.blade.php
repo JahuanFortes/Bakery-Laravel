@@ -1,9 +1,9 @@
 <x-app-layout>
-    @if(auth()->check() && auth()->user()->admin)
+    @if(auth()->id() === $post->user_id)
 
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('Admin Edit') }}
+                {{ __('Post Edit') }}
             </h2>
         </x-slot>
 
@@ -40,7 +40,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>
